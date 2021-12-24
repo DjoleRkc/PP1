@@ -1,3 +1,9 @@
+'''
+Napisati program koji na osnovu zadate matrice koja ima bela (w) i crna (b) polja formira novu matricu prema sledećim pravilima:
+1. Belo polje koje ima 2 ili 3 bela suseda ostaje belo
+2. Crno polje koje ima 3 bela suseda postaje belo
+3. Sva ostala polja (p)ostaju crna
+'''
 import copy
 def ucitaj_red(broj_kolona):
     if broj_kolona == 0:
