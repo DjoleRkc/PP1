@@ -1,4 +1,14 @@
-﻿n=1
+'''
+Napisati program koji od zadatog niza celih brojeva formira novi niz koji sadrži samo neparne negativne i parne pozitivne elemente.
+Elementi u novoformiranom nizu treba da budu smešteni u obrnutom poretku u odnosu na ulazni niz.
+Program treba da:
+1. Učita dužinu niza
+2. Proveri da li je dužina niza korektna i prekine program ukoliko nije
+3. Učita niz celih brojeva
+4. Formira novi niz na prethodno opisan način
+5. Ispiše dobijeni niz nakon završetka obrade na prethodno opisan način
+'''
+n=1
 adrA=2
 adrB=3
 temp=4
