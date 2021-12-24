@@ -1,0 +1,61 @@
+﻿n=1
+adrA=2
+adrB=3
+temp=4
+broj=5
+brojac1=6
+brojac2=7
+A=100
+B=200
+org 8
+pocetak:mov n, 0
+in n
+bgt 0, n, kraj
+beq 0, n, kraj
+mov temp, 100
+bgt n, temp, kraj
+mov adrA, #A
+mov adrB, #B
+mov temp, n
+sub temp, temp, 1
+mov brojac1, temp
+mov temp, 0
+mov brojac2, 0
+in (adrA), n
+jsr pp
+mov adrB, #B
+out (adrB), brojac2
+mov temp, 0
+beq 0, temp, pocetak
+kraj:stop
+	pp:mov temp, #A
+    add temp, temp, brojac1
+    mov broj, (temp)
+	beq broj, 0, petlja3
+	mov temp, 0
+	div temp, broj, 2
+    mul temp, temp, 2
+    jsr parnost
+	petlja3: sub brojac1, brojac1, 1
+    sub n, n, 1
+    bgt n, 0, pp
+    rts
+    
+parnost: beq temp, broj, paran
+      bgt broj, temp, neparan
+      bgt temp, broj, neparan
+neparan: bgt 0, broj, neparan_negativan
+		 rts
+neparan_negativan: mov (adrB), broj
+		 add adrB, adrB, 1
+         add brojac2, brojac2, 1
+         rts
+		
+
+paran: 	bgt broj, 0, paran_pozitivan
+		rts
+
+paran_pozitivan: mov (adrB), broj
+				 add brojac2, brojac2, 1
+		 		 add adrB, adrB, 1
+                 rts
