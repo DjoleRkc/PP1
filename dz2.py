@@ -1,8 +1,8 @@
+'''
+Lista celih brojeva se unosi sa standardnog ulaza. Ako se neki broj pojavljuje više od jednom (nezavisno od +/- predznaka), izbaciti
+sva pojavljivanja tog broja. Na izlazu ištampati novoformiranu listu i broj izbačenih elemenata.
+'''
 nova_lista = []
-#broj_elemenata = int(input())
-#for j in range(0, broj_elemenata):
-    #element_liste = int(input())
-    #lista_brojeva.append(element_liste)
 niz = input()
 lista_brojeva = [int(b) for b in niz.split(" ")]
 duzina_niza = len(lista_brojeva)
@@ -25,9 +25,3 @@ broj_izbacenih_elemenata = duzina_niza - len(nova_lista)
 
 print(nova_lista)
 print(broj_izbacenih_elemenata)
-#if len(nova_lista) == 0:
-    #print("Nova lista je prazna. ", nova_lista)
-#else:
-    #print("Nova lista je: ", nova_lista)
-
-#print("Broj izbacenih elemenata je: ", broj_izbacenih_elemenata)
