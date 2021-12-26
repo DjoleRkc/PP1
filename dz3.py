@@ -40,7 +40,7 @@ def istampaj_matricu(matrica):
 def obrada(broj_redova, broj_kolona, matrica, matrica_kopija):
     for el in range(0, broj_redova):
         for m in range(0, broj_kolona):
-            brojac_suseda_belog = 0
+            brojac_belih_suseda = 0
             if el == 0:
                 nulta_vrsta = True
                 poslednja_vrsta = False
@@ -62,33 +62,33 @@ def obrada(broj_redova, broj_kolona, matrica, matrica_kopija):
                 poslednja_kolona = False
             if not nulta_vrsta and broj_redova > 1:  # provera da li ima el iznad
                 if matrica[el - 1][m] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if not nulta_kolona and broj_kolona > 1:  # provera da li ima el levo
                 if matrica[el][m - 1] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if not poslednja_vrsta and broj_redova > 1:  # provera da li ima el ispod
                 if matrica[el + 1][m] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if not poslednja_kolona and broj_kolona > 1:  # provera da li ima el desno
                 if matrica[el][m + 1] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if not nulta_vrsta and not nulta_kolona and broj_redova > 1 and broj_kolona > 1:  # provera da li ima el gore levo
                 if matrica[el - 1][m - 1] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if not nulta_vrsta and not poslednja_kolona and broj_redova > 1 and broj_kolona > 1:  # provera da li ima el gore desno
                 if matrica[el - 1][m + 1] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if not nulta_kolona and not poslednja_vrsta and broj_redova > 1 and broj_kolona > 1:  # provera da li ima el dole levo
                 if matrica[el + 1][m - 1] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if not poslednja_vrsta and not poslednja_kolona and broj_redova > 1 and broj_kolona > 1:  # provera da li ima el dole desno
                 if matrica[el + 1][m + 1] == "w":
-                    brojac_suseda_belog += 1
+                    brojac_belih_suseda += 1
             if matrica[el][m] == "w":
-                if not (brojac_suseda_belog == 2 or brojac_suseda_belog == 3):
+                if not (brojac_belih_suseda == 2 or brojac_belih_suseda == 3):
                     matrica_kopija[el][m] = "b"
             else:
-                if brojac_suseda_belog == 3:
+                if brojac_belih_suseda == 3:
                     matrica_kopija[el][m] = "w"
 
     istampaj_matricu(matrica_kopija)
