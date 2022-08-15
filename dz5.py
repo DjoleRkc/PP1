@@ -21,8 +21,7 @@ obrada. Svaki datum se unosi u posebnoj liniji teksta.
 4) Formira izlaznu datoteku prema tekstu zadatka.
 5) Vodi računa i obradi moguće izuzetke koji mogu nastati prilikom rada programa.
 Ovakvo rešenje zadatka ne koristi csv i re module koji olakšavaju rad sa csv datotekama, pa je iz tog razloga malo komplikovanije. Za ovakvo rešavanje ovog zadatka potrebno je
-izuzetno znanje metoda korišćenih za rešavanje prethodna 4 zadatka.
-HVALA KOLEGINICI LANI JOVANOVIĆ NA USTUPLJENOM REŠENJU '''
+izuzetno znanje metoda korišćenih za rešavanje prethodna 4 zadatka. '''
 
 def Sortiraj(recnik):
     finalRec = {}
